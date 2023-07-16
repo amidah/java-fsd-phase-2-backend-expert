@@ -1,39 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>ServletExamples</display-name>
-  
-  <welcome-file-list>
-  	<welcome-file>index.html</welcome-file>
-  </welcome-file-list>
-  
-  <servlet>
-  	<servlet-name>MyServlet</servlet-name>
-  	<servlet-class>com.simplilearn.servlet.DummyServlet</servlet-class>
-  </servlet>
-  
-  <servlet>
-  	<servlet-name>Login</servlet-name>
-  	<servlet-class>com.simplilearn.requestdispatcher.Login</servlet-class>
-  </servlet>
-  
-  <servlet>
-  	<servlet-name>Welcome</servlet-name>
-  	<servlet-class>com.simplilearn.requestdispatcher.Welcome</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>MyServlet</servlet-name>
-  	<url-pattern>/welcome</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-  	<servlet-name>Login</servlet-name>
-  	<url-pattern>/login</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-  	<servlet-name>Welcome</servlet-name>
-  	<url-pattern>/welcomeservlet</url-pattern>
-  </servlet-mapping>
-  
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>ServletExamples</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>dbdriver</param-name>
+		<param-value>oracle jdbc driver</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>dbdialect</param-name>
+		<param-value>oracle dialect</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>dbquery</param-name>
+		<param-value>select from eval</param-value>
+	</context-param>
+
+
+	<servlet>
+		<servlet-name>MyServlet</servlet-name>
+		<servlet-class>com.simplilearn.servlet.DummyServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.simplilearn.requestdispatcher.Login</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Welcome</servlet-name>
+		<servlet-class>com.simplilearn.requestdispatcher.Welcome</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>SearchServlet</servlet-name>
+		<servlet-class>com.simplilearn.sendredirect.SearchServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ServletConfiguration</servlet-name>
+		<servlet-class>com.simplilearn.servlet.config.context.ServletConfiguration</servlet-class>
+
+		<init-param>
+			<param-name>dbuser</param-name>
+			<param-value>product</param-value>
+		</init-param>
+
+		<init-param>
+			<param-name>dbpassword</param-name>
+			<param-value>prod@1234</param-value>
+		</init-param>
+
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>ServletAttribute1</servlet-name>
+		<servlet-class>com.simplilearn.servlet.attributes.ServletAttribute1</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ServletAttribute2</servlet-name>
+		<servlet-class>com.simplilearn.servlet.attributes.ServletAttribute2</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>MyServlet</servlet-name>
+		<url-pattern>/welcome</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Welcome</servlet-name>
+		<url-pattern>/welcomeservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SearchServlet</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ServletConfiguration</servlet-name>
+		<url-pattern>/config</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ServletAttribute1</servlet-name>
+		<url-pattern>/attribute</url-pattern>
+	</servlet-mapping>
+	
+		<servlet-mapping>
+		<servlet-name>ServletAttribute2</servlet-name>
+		<url-pattern>/servletattribute2</url-pattern>
+	</servlet-mapping>
+	
+
 </web-app>
