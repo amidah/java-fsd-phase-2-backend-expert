@@ -6,7 +6,8 @@
 	<display-name>ServletExamples</display-name>
 
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<!-- <welcome-file>index.html</welcome-file> -->
+		<welcome-file>welcome.html</welcome-file>
 	</welcome-file-list>
 
 	<context-param>
@@ -82,6 +83,21 @@
 		<servlet-class>com.simplilearn.servlet.cookies.CookieDetail</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.simplilearn.servlet.cookies.LoginServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>com.simplilearn.servlet.cookies.LogoutServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ProfileServlet</servlet-name>
+		<servlet-class>com.simplilearn.servlet.cookies.ProfileServlet</servlet-class>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>MyServlet</servlet-name>
 		<url-pattern>/welcome</url-pattern>
@@ -116,8 +132,8 @@
 		<servlet-name>ServletAttribute2</servlet-name>
 		<url-pattern>/servletattribute2</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<servlet-mapping>
 		<servlet-name>ServletCookie</servlet-name>
 		<url-pattern>/servletcookie</url-pattern>
@@ -126,6 +142,21 @@
 	<servlet-mapping>
 		<servlet-name>CookieDetail</servlet-name>
 		<url-pattern>/cookiedtl</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/loginservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/logoutservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ProfileServlet</servlet-name>
+		<url-pattern>/profileservlet</url-pattern>
 	</servlet-mapping>
 
 
