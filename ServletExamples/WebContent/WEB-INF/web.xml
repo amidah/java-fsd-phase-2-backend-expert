@@ -72,6 +72,15 @@
 		<servlet-class>com.simplilearn.servlet.attributes.ServletAttribute2</servlet-class>
 	</servlet>
 
+	<servlet>
+		<servlet-name>ServletCookie</servlet-name>
+		<servlet-class>com.simplilearn.servlet.cookies.ServletCookie</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CookieDetail</servlet-name>
+		<servlet-class>com.simplilearn.servlet.cookies.CookieDetail</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>MyServlet</servlet-name>
@@ -102,11 +111,22 @@
 		<servlet-name>ServletAttribute1</servlet-name>
 		<url-pattern>/attribute</url-pattern>
 	</servlet-mapping>
-	
-		<servlet-mapping>
+
+	<servlet-mapping>
 		<servlet-name>ServletAttribute2</servlet-name>
 		<url-pattern>/servletattribute2</url-pattern>
 	</servlet-mapping>
 	
+	
+	<servlet-mapping>
+		<servlet-name>ServletCookie</servlet-name>
+		<url-pattern>/servletcookie</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CookieDetail</servlet-name>
+		<url-pattern>/cookiedtl</url-pattern>
+	</servlet-mapping>
+
 
 </web-app>
