@@ -1,4 +1,4 @@
-package com.simplilearn.servlet.cookies;
+package com.simplilearn.session.tracking.httpsession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,8 +8,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class LoginServlet extends HttpServlet {
+public class LoginServletHttpSession extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
@@ -26,8 +27,8 @@ public class LoginServlet extends HttpServlet {
 			pw.print("<br><br>You are successfully logged in!");
 			pw.print("<br><br>Welcome, " + username);
 
-			Cookie ck = new Cookie("uname", username);
-			res.addCookie(ck);
+			HttpSession session = req.getSession();
+			session.setAttribute("name", username);
 
 		}
 

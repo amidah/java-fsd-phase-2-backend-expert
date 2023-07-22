@@ -75,28 +75,64 @@
 
 	<servlet>
 		<servlet-name>ServletCookie</servlet-name>
-		<servlet-class>com.simplilearn.servlet.cookies.ServletCookie</servlet-class>
+		<servlet-class>com.simplilearn.session.tracking.ServletCookie</servlet-class>
 	</servlet>
 
 	<servlet>
 		<servlet-name>CookieDetail</servlet-name>
-		<servlet-class>com.simplilearn.servlet.cookies.CookieDetail</servlet-class>
+		<servlet-class>com.simplilearn.session.tracking.CookieDetail</servlet-class>
 	</servlet>
 
 	<servlet>
 		<servlet-name>LoginServlet</servlet-name>
-		<servlet-class>com.simplilearn.servlet.cookies.LoginServlet</servlet-class>
+		<servlet-class>com.simplilearn.session.tracking.cookies.LoginServlet</servlet-class>
 	</servlet>
 
 	<servlet>
 		<servlet-name>LogoutServlet</servlet-name>
-		<servlet-class>com.simplilearn.servlet.cookies.LogoutServlet</servlet-class>
+		<servlet-class>com.simplilearn.session.tracking.cookies.LogoutServlet</servlet-class>
 	</servlet>
 
 	<servlet>
 		<servlet-name>ProfileServlet</servlet-name>
-		<servlet-class>com.simplilearn.servlet.cookies.ProfileServlet</servlet-class>
+		<servlet-class>com.simplilearn.session.tracking.cookies.ProfileServlet</servlet-class>
 	</servlet>
+
+	<servlet>
+		<servlet-name>UrlRewriteServlet</servlet-name>
+		<servlet-class>com.simplilearn.session.tracking.urlrewriting.UrlRewriteServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>UserDetail</servlet-name>
+		<servlet-class>com.simplilearn.session.tracking.urlrewriting.UserDetail</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>HiddenFormServlet</servlet-name>
+		<servlet-class>com.simplilearn.session.tracking.hiddenformfield.HiddenFormServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>HiddenFieldDetail</servlet-name>
+		<servlet-class>com.simplilearn.session.tracking.hiddenformfield.HiddenFieldDetail</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>LoginServletHttpSession</servlet-name>
+		<servlet-class>com.simplilearn.session.tracking.httpsession.LoginServletHttpSession</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LogoutServletHttpSession</servlet-name>
+		<servlet-class>com.simplilearn.session.tracking.httpsession.LogoutServletHttpSession</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ProfileServletHttpSession</servlet-name>
+		<servlet-class>com.simplilearn.session.tracking.httpsession.ProfileServletHttpSession</servlet-class>
+	</servlet>
+	
 
 	<servlet-mapping>
 		<servlet-name>MyServlet</servlet-name>
@@ -157,6 +193,47 @@
 	<servlet-mapping>
 		<servlet-name>ProfileServlet</servlet-name>
 		<url-pattern>/profileservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UrlRewriteServlet</servlet-name>
+		<url-pattern>/urlrewriteservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UserDetail</servlet-name>
+		<url-pattern>/userdetail</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>HiddenFormServlet</servlet-name>
+		<url-pattern>/hiddenformservlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>HiddenFieldDetail</servlet-name>
+		<url-pattern>/hiddenfielddetail</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>CookieDetail</servlet-name>
+		<url-pattern>/cookiedtl</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LoginServletHttpSession</servlet-name>
+		<url-pattern>/loginservlethttpsession</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LogoutServletHttpSession</servlet-name>
+		<url-pattern>/logoutservlethttpsession</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ProfileServletHttpSession</servlet-name>
+		<url-pattern>/profileservlethttpsession</url-pattern>
 	</servlet-mapping>
 
 

@@ -1,4 +1,4 @@
-package com.simplilearn.servlet.cookies;
+package com.simplilearn.session.tracking.cookies;
 
 import java.io.IOException;
 import java.io.PrintWriter;
