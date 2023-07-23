@@ -14,6 +14,16 @@
 		<listener-class>com.simplilearn.event.listeners.httpsession.CountUserListener</listener-class>
 	</listener>
 
+	<filter>
+		<filter-name>AuthenticationFilter</filter-name>
+		<filter-class>com.simplilearn.servlet.filter.AuthenticationFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>AuthenticationFilter</filter-name>
+		<url-pattern>/adminservlet</url-pattern>
+	</filter-mapping>
+
 	<context-param>
 		<param-name>dbdriver</param-name>
 		<param-value>oracle jdbc driver</param-value>
@@ -146,6 +156,11 @@
 		<servlet-name>HttpSessionLogoutServlet</servlet-name>
 		<servlet-class>com.simplilearn.event.listeners.httpsession.HttpSessionLogoutServlet</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>com.simplilearn.servlet.filter.AdminServlet</servlet-class>
+	</servlet>
 
 
 	<servlet-mapping>
@@ -253,6 +268,11 @@
 	<servlet-mapping>
 		<servlet-name>HttpSessionLogoutServlet</servlet-name>
 		<url-pattern>/httpsessionlistenerlogout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/adminservlet</url-pattern>
 	</servlet-mapping>
 
 

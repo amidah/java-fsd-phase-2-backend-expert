@@ -15,6 +15,7 @@ public class CountUserListener implements HttpSessionListener {
 		ctx = e.getSession().getServletContext();
 		ctx.setAttribute("totalusers", total);
 		ctx.setAttribute("currentusers", current);
+		
 
 	}
 
