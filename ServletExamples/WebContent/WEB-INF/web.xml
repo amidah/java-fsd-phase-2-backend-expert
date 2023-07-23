@@ -6,9 +6,13 @@
 	<display-name>ServletExamples</display-name>
 
 	<welcome-file-list>
-		<!-- <welcome-file>index.html</welcome-file> -->
-		<welcome-file>welcome.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<!-- <welcome-file>welcome.html</welcome-file> -->
 	</welcome-file-list>
+
+	<listener>
+		<listener-class>com.simplilearn.event.listeners.httpsession.CountUserListener</listener-class>
+	</listener>
 
 	<context-param>
 		<param-name>dbdriver</param-name>
@@ -107,17 +111,17 @@
 		<servlet-name>UserDetail</servlet-name>
 		<servlet-class>com.simplilearn.session.tracking.urlrewriting.UserDetail</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>HiddenFormServlet</servlet-name>
 		<servlet-class>com.simplilearn.session.tracking.hiddenformfield.HiddenFormServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>HiddenFieldDetail</servlet-name>
 		<servlet-class>com.simplilearn.session.tracking.hiddenformfield.HiddenFieldDetail</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>LoginServletHttpSession</servlet-name>
 		<servlet-class>com.simplilearn.session.tracking.httpsession.LoginServletHttpSession</servlet-class>
@@ -132,7 +136,17 @@
 		<servlet-name>ProfileServletHttpSession</servlet-name>
 		<servlet-class>com.simplilearn.session.tracking.httpsession.ProfileServletHttpSession</servlet-class>
 	</servlet>
-	
+
+	<servlet>
+		<servlet-name>HttpSessionServlet</servlet-name>
+		<servlet-class>com.simplilearn.event.listeners.httpsession.HttpSessionServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>HttpSessionLogoutServlet</servlet-name>
+		<servlet-class>com.simplilearn.event.listeners.httpsession.HttpSessionLogoutServlet</servlet-class>
+	</servlet>
+
 
 	<servlet-mapping>
 		<servlet-name>MyServlet</servlet-name>
@@ -210,15 +224,10 @@
 		<servlet-name>HiddenFormServlet</servlet-name>
 		<url-pattern>/hiddenformservlet</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet-mapping>
 		<servlet-name>HiddenFieldDetail</servlet-name>
 		<url-pattern>/hiddenfielddetail</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-		<servlet-name>CookieDetail</servlet-name>
-		<url-pattern>/cookiedtl</url-pattern>
 	</servlet-mapping>
 
 	<servlet-mapping>
@@ -234,6 +243,16 @@
 	<servlet-mapping>
 		<servlet-name>ProfileServletHttpSession</servlet-name>
 		<url-pattern>/profileservlethttpsession</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>HttpSessionServlet</servlet-name>
+		<url-pattern>/httpsessionservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>HttpSessionLogoutServlet</servlet-name>
+		<url-pattern>/httpsessionlistenerlogout</url-pattern>
 	</servlet-mapping>
 
 
