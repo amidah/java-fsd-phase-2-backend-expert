@@ -2,37 +2,27 @@ package com.simplilearn.jdbc.mysql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class MysqlConnection {
-	
-	
+public class SimpleTransactionExample {
+
 //	public static void main(String[] args) {
-//		//JDBC Connectivity
-//		
-//		
+//
 //		try {
-//			//1. Register Driver
 //			Class.forName("com.mysql.cj.jdbc.Driver");
-//			
-//			//2. Get Connection
+//
 //			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee", "root", "admin123");
+//			con.setAutoCommit(false);
 //			
-//			//3. Create Statement
-//			Statement statement = con.createStatement();
+//			Statement stmt = con.createStatement();
 //			
-//			//4. Execute Query
-//			ResultSet rs = statement.executeQuery("select * from emp");
+//			stmt.executeUpdate("insert into emp(id, name, age) values(6, 'Jaz', 28)");
+//			stmt.executeUpdate("insert into emp(id, name, age) values(7, 'Naz', 38)");
 //			
-//			while(rs.next()) {
-//				System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3));
-//			}
-//			
-//			//5. Close Connection
+//			con.commit();
 //			con.close();
-//			
+//		
 //		} catch (ClassNotFoundException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
@@ -40,6 +30,6 @@ public class MysqlConnection {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
+//
 //	}
-
 }
