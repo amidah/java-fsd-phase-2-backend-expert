@@ -19,6 +19,16 @@
 		<servlet-class>com.simplilearn.servlet.ViewEmployee</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>EditEmployee</servlet-name>
+		<servlet-class>com.simplilearn.servlet.EditEmployee</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>EditEmployee2</servlet-name>
+		<servlet-class>com.simplilearn.servlet.EditEmployee2</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>SaveEmployee</servlet-name>
 		<url-pattern>/saveemployee</url-pattern>
@@ -27,6 +37,16 @@
 	<servlet-mapping>
 		<servlet-name>ViewEmployee</servlet-name>
 		<url-pattern>/viewemployee</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EditEmployee</servlet-name>
+		<url-pattern>/editservlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>EditEmployee2</servlet-name>
+		<url-pattern>/editservlet2</url-pattern>
 	</servlet-mapping>
 </web-app>
 

@@ -28,12 +28,12 @@ public class ViewEmployee extends HttpServlet {
 		
 		pw.print("<br><br>Employee details fetched successfully.<br><br>");
 		pw.print("<table border='1' width='100%'>");
-		pw.print("<tr><th>Name</th><th>Password</th><th>Email</th><th>Country</th></tr>");
+		pw.print("<tr><th>Id</th><th>Name</th><th>Password</th><th>Email</th><th>Country</th><th>Edit Details</th></tr>");
 
 		for (Employee emp : empList) {
 
-			pw.print("<tr><td>" + emp.getName() + "</td><td>" + emp.getPassword() + "</td><td>" + emp.getEmail()
-					+ "</td><td>" + emp.getCountry() + "</td></tr>");
+			pw.print("<tr><td>" + emp.getId() + "</td><td>" + emp.getName() + "</td><td>" + emp.getPassword() + "</td><td>" + emp.getEmail()
+					+ "</td><td>" + emp.getCountry() + "</td><td><a href='editservlet?id="+emp.getId()+"'>Edit</a></td></tr>");
 		}
 		pw.print("</table>");
 

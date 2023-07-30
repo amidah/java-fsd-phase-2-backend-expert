@@ -68,6 +68,7 @@ public class EmployeeDao {
 
 			while (rs.next()) {
 				Employee e = new Employee();
+				e.setId(rs.getInt(1));
 				e.setName(rs.getString(2));
 				e.setPassword(rs.getString(3));
 				e.setEmail(rs.getString(4));
@@ -83,4 +84,58 @@ public class EmployeeDao {
 		return empList;
 	}
 
+	
+	public static Employee getEmployeeById(int id) {
+		Employee emp = new Employee();
+		
+			
+			try {
+				Connection con = EmployeeDao.getConnection();
+				PreparedStatement ps = con.prepareStatement("select * from Employee where ID=?");
+				ps.setInt(1, id);
+				
+				ResultSet rs = ps.executeQuery();
+				
+				if(rs.next()) {
+					emp.setId(rs.getInt(1));
+					emp.setName(rs.getString(2));
+					emp.setPassword(rs.getString(3));
+					emp.setEmail(rs.getString(4));
+					emp.setCountry(rs.getString(5));
+				}
+				
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		return emp;
+	}
+	
+	
+	public static int update(Employee emp) {
+		int status = 0;
+
+		try {
+			Connection con = EmployeeDao.getConnection();
+			PreparedStatement ps = con.prepareStatement("update Employee set NAME=?,PASSWORD=?,EMAIL=?,COUNTRY=? where ID=?");
+
+			
+			ps.setString(1, emp.getName());
+			ps.setString(2, emp.getPassword());
+			ps.setString(3, emp.getEmail());
+			ps.setString(4, emp.getCountry());
+			ps.setInt(5, emp.getId());
+
+			status = ps.executeUpdate();
+
+			con.close();
+
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return status;
+	}
+	
 }
