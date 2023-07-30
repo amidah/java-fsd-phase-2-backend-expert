@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.simplilearn.dao.EmployeeDao;
 import com.simplilearn.model.Employee;
 
 public class SaveEmployee extends HttpServlet {
@@ -33,16 +34,15 @@ public class SaveEmployee extends HttpServlet {
 			emp.setCountry(country);
 		}
 
-		if (emp != null) {
-			
-			ServletContext ctx = getServletContext();
-			ctx.setAttribute("employee", emp);
-			
-			pw.print("<br><br>" + "Employee details saved successfully.<br><br>");
+		int status = EmployeeDao.save(emp);
+		
+		if(status > 0) {
+			pw.print("<br><br><b>Record Saved Successfully!<b><br><br>");
 			req.getRequestDispatcher("index.html").include(req, res);
-		} else {
-			pw.print("<br><br>" + "Sorry unable to save the employee details. Please try again.<br><br>");
-			req.getRequestDispatcher("index.html").include(req, res);
+		}
+		
+		else {
+			pw.print("<br><br><b>Sorry! unable to save the record!<b><br><br>");
 		}
 
 		pw.close();
