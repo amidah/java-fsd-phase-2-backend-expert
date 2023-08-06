@@ -7,7 +7,7 @@
  
  <class name="com.simplilearn.hibernate.persistent.Student" table="Student">
  	<id name="id">
- 		<generator class="assigned">
+ 		<generator class="increment">
  		</generator>
  	</id>
  	<property name="name"></property>

@@ -27,12 +27,18 @@ public class EmployeeDao {
 
 		Employee employee = new Employee();
 
-		employee.setId(1);
 		employee.setName("Shawn");
 		employee.setAge(28);
 		employee.setDepartment("IT");
+		
+		Employee employee1 = new Employee();
+
+		employee1.setName("Rammy");
+		employee1.setAge(28);
+		employee1.setDepartment("HR");
 
 		session.save(employee);
+		session.save(employee1);
 
 		t.commit();
 
