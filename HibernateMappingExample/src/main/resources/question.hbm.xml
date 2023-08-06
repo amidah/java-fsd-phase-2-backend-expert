@@ -14,13 +14,29 @@
 
 		<property name="qname"></property>
 
-		<list name="answers" table="ANSWERS">
+		<list name="answers" cascade="all">
+
 
 			<key column="qid"></key>
 			<index column="type"></index>
-			<element column="answer" type="string"></element>
+			<one-to-many
+				class="com.simplilearn.hibernate.mapping.persistence.Answer" />
 		</list>
 
 	</class>
+
+	<class
+		name="com.simplilearn.hibernate.mapping.persistence.Answer"
+		table="ANSWERS">
+
+		<id name="id">
+			<generator class="increment"></generator>
+		</id>
+
+		<property name="answer"></property>
+		<property name="posterName"></property>
+
+	</class>
+
 
 </hibernate-mapping>

@@ -6,7 +6,7 @@ public class Question {
 
 	private int id;
 	private String qname;
-	private List<String> answers;
+	private List<Answer> answers;
 
 	public int getId() {
 		return id;
@@ -24,11 +24,11 @@ public class Question {
 		this.qname = qname;
 	}
 
-	public List<String> getAnswers() {
+	public List<Answer> getAnswers() {
 		return answers;
 	}
 
-	public void setAnswers(List<String> answers) {
+	public void setAnswers(List<Answer> answers) {
 		this.answers = answers;
 	}
 
