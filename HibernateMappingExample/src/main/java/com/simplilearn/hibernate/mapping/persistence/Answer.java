@@ -1,10 +1,27 @@
 package com.simplilearn.hibernate.mapping.persistence;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ANSWER")
 public class Answer {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
+	@Column(name = "ID")
 	private int id;
+	
+	@Column(name = "ANSWER")
 	private String answer;
+	
+	@Column(name = "POSTER_NAME")
 	private String posterName;
+	
 	public int getId() {
 		return id;
 	}

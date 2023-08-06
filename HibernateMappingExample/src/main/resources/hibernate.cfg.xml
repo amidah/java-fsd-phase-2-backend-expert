@@ -14,7 +14,9 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">admin123</property>
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-		<mapping resource="question.hbm.xml" />
+		<!-- <mapping resource="question.hbm.xml" /> -->
+		<mapping class="com.simplilearn.hibernate.mapping.persistence.Question"/>
+		<mapping class="com.simplilearn.hibernate.mapping.persistence.Answer"/>
 	</session-factory>
 
 </hibernate-configuration>
