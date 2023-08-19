@@ -15,7 +15,7 @@ import com.simplilearn.hibernate.mapping.persistence.Question;
 import com.simplilearn.hibernate.mapping.persistence.Student;
 
 public class CommonDAO {
-	
+
 	public static void main(String[] args) {
 		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
 
@@ -23,28 +23,41 @@ public class CommonDAO {
 
 		SessionFactory sf = meta.getSessionFactoryBuilder().build();
 
-		Session session = sf.openSession();
+		Session session = null;
 
-		Transaction t = session.beginTransaction();
-		
-		QuestionDAO qdao = new QuestionDAO();
-		
-		List<Question> quesList = qdao.getQuestionAnswerDetails();
-		
-		StudentsDAO stdao = new StudentsDAO();
-		List<Student> stList = stdao.getStudentCourseDetails();
-		
-		session.persist(stList.get(0));
-		session.persist(stList.get(1));
-		session.persist(stList.get(2));
-		session.persist(stList.get(3));
-		
-		t.commit();
+		Transaction t = null;
 
-		System.out.println("Successfully saved...");
+		try {
 
-		sf.close();
-		session.close();
+			session = sf.openSession();
+
+			t = session.beginTransaction();
+
+			QuestionDAO qdao = new QuestionDAO();
+
+			List<Question> quesList = qdao.getQuestionAnswerDetails();
+
+			StudentsDAO stdao = new StudentsDAO();
+			List<Student> stList = stdao.getStudentCourseDetails();
+
+			session.persist(stList.get(0));
+			session.persist(stList.get(1));
+			session.persist(stList.get(2));
+			session.persist(stList.get(3));
+			//session.persist(stList.get(4)); -- generating exception before committing transaction
+			t.commit();
+			
+			//System.out.println("Get last value from student list " + stList.get(4)); -- generating exception after committing transaction
+			System.out.println("Successfully saved...");
+
+		} catch (Exception ex) {
+			System.out.println("Exception Occurred ---->" + ex.getMessage());
+			System.out.println("Exception Ocurred, rolling back the transaction now..");
+			t.rollback();
+		} finally {
+			sf.close();
+			session.close();
+		}
+
 	}
-
 }
