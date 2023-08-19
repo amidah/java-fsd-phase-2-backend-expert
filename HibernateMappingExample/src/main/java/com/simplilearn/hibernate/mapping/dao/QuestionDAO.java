@@ -16,18 +16,8 @@ import com.simplilearn.hibernate.mapping.persistence.Question;
 
 public class QuestionDAO {
 
-	public static void main(String[] args) {
-		StandardServiceRegistry ssr = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
-
-		Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
-
-		SessionFactory sf = meta.getSessionFactoryBuilder().build();
-
-		Session session = sf.openSession();
-
-		Transaction t = session.beginTransaction();
-		
-//		List<String> answerList1 = new ArrayList<String>();
+	public List<Question> getQuestionAnswerDetails() {
+		//		List<String> answerList1 = new ArrayList<String>();
 //		
 //		answerList1.add("JAVA is an Object Oriented Programming Language.");
 //		answerList1.add("JAVA is platform independent.");
@@ -72,17 +62,12 @@ public class QuestionDAO {
 		Question question2 = new Question();
 		question2.setQname("What is Hibernate?");
 		question2.setAnswers(ansList2);
+
+		List<Question> questionList = new ArrayList<Question>();
+		questionList.add(question1);
+		questionList.add(question2);
 		
-		session.persist(question1);
-		session.persist(question2);
-		
-
-		t.commit();
-
-		System.out.println("Successfully saved...");
-
-		sf.close();
-		session.close();
+		return questionList;
 
 	}
 

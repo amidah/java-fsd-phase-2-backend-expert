@@ -15,8 +15,10 @@
 		<property name="connection.password">admin123</property>
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		<!-- <mapping resource="question.hbm.xml" /> -->
-		<mapping class="com.simplilearn.hibernate.mapping.persistence.Question"/>
-		<mapping class="com.simplilearn.hibernate.mapping.persistence.Answer"/>
+		<!-- <mapping class="com.simplilearn.hibernate.mapping.persistence.Question"/>
+		<mapping class="com.simplilearn.hibernate.mapping.persistence.Answer"/> -->
+		<mapping class="com.simplilearn.hibernate.mapping.persistence.Student"/>
+		<mapping class="com.simplilearn.hibernate.mapping.persistence.Course"/>
 	</session-factory>
 
 </hibernate-configuration>
