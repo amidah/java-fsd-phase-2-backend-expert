@@ -10,6 +10,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import com.simplilearn.hibernate.mapping.persistence.Course;
 import com.simplilearn.hibernate.mapping.persistence.Question;
 import com.simplilearn.hibernate.mapping.persistence.Student;
 
@@ -35,7 +36,9 @@ public class CommonDAO {
 		
 		session.persist(stList.get(0));
 		session.persist(stList.get(1));
-
+		session.persist(stList.get(2));
+		session.persist(stList.get(3));
+		
 		t.commit();
 
 		System.out.println("Successfully saved...");

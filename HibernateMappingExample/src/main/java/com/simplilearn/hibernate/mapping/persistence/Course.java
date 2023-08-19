@@ -1,10 +1,13 @@
 package com.simplilearn.hibernate.mapping.persistence;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,9 @@ public class Course {
 	
 	@Column(name="COURSE_PRICE")
 	private double coursePrice;
+	
+	@ManyToMany(mappedBy="courseList")
+	private List<Student> studentList;
 
 	public int getId() {
 		return id;
@@ -44,6 +50,14 @@ public class Course {
 
 	public void setCoursePrice(double coursePrice) {
 		this.coursePrice = coursePrice;
+	}
+
+	public List<Student> getStudentList() {
+		return studentList;
+	}
+
+	public void setStudentList(List<Student> studentList) {
+		this.studentList = studentList;
 	}
 
 	@Override
