@@ -8,16 +8,26 @@
 <hibernate-configuration>
 
 	<session-factory>
-		<property name="hbm2ddl.auto">create</property>
-		<!-- <property name="hbm2ddl.auto">none</property> use only to load details from database and comment the first line-->
+		<!-- <property name="hbm2ddl.auto">create</property> -->
+		 <property name="hbm2ddl.auto">none</property> <!--use only to load details 
+			from database and comment the first line -->
 		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 		<property name="connection.url">jdbc:mysql://localhost:3306/employee</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">admin123</property>
 		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+
+		<!-- For first level cache -->
 		<mapping
 			class="com.simplilearn.hibernate.annotation.persistent.Employee" />
+
+		<!-- For Second Level Cache -->
+		<mapping
+			class="com.simplilearn.hibernate.annotation.persistent.Student" />
 	</session-factory>
 
 </hibernate-configuration>
